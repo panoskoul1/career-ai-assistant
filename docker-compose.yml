@@ -42,7 +42,7 @@ services:
       ollama:
         condition: service_healthy
     entrypoint: >
-      sh -c "curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"mistral:7b\"}' && echo 'Model pulled successfully'"
+      sh -c "curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"llama3.1:8b\"}' && echo 'Model pulled successfully'"
     restart: "no"
 
   # ── Nuclio Functions (AI compute) ─────────────────────────────────────────
