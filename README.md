@@ -11,7 +11,7 @@ cd career-ai-assistant
 docker compose run --rm ollama-init
 
 # Build and start everything
-docker compose up --build
+docker compose up --build (about 10-12 mins)
 ```
 
 First build takes 5–10 minutes. After that, `fn-agent` needs ~2 minutes to warm up the LLM and embedding model. Once you see `fn-agent ready: 7 tools loaded` in the logs, everything is live.
@@ -185,4 +185,5 @@ I used Cursor and Claude for mechanical, high-volume work: scaffolding FastAPI r
 - **Streaming.** The biggest UX problem is the 8–15 second wait with no feedback. Token streaming from Ollama → LlamaIndex → FastAPI SSE → frontend would fix this. LlamaIndex supports it; the frontend just needs an SSE consumer.
 - **Persistent sessions.** Redis-backed `ChatMemoryBuffer` so sessions survive restarts and work across replicas.
 - **Tests.** Start with the deterministic layer: fit scorer edge cases, skill extractor coverage, chunking boundaries, intent classifier with mocked LLM. Then integration tests for routing paths.
+
 
