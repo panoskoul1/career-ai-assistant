@@ -1,0 +1,9 @@
+# fn-ingest dependencies
+# Server: nuclio_runner.py uses stdlib http.server — NO fastapi, NO uvicorn
+
+# Embedding model
+sentence-transformers==2.3.1
+torch>=2.0.0
+
+# Vector DB client
+qdrant-client==1.7.3
