@@ -17,9 +17,9 @@ from shared.models import JobInfo
 logger = logging.getLogger(__name__)
 
 
-# def add_job(job: JobInfo) -> None:
-#     """No-op — jobs are already registered via get_registry().register() in upload.py."""
-#     pass
+def add_job(job: JobInfo) -> None:
+    """No-op — jobs are already registered via get_registry().register() in upload.py."""
+    pass
 
 
 def get_job(job_id: str) -> JobInfo | None:
