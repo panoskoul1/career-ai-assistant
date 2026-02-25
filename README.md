@@ -7,7 +7,7 @@
 ```bash
 cd career-ai-assistant
 
-# Pull the LLM model (first time only — ~4.7 GB, 5–15 min)
+# Pull the LLM model (first time only — ~4.7 GB, 5–8 min)
 docker compose run --rm ollama-init
 
 # Build and start everything
@@ -185,3 +185,4 @@ I used Cursor and Claude for mechanical, high-volume work: scaffolding FastAPI r
 - **Streaming.** The biggest UX problem is the 8–15 second wait with no feedback. Token streaming from Ollama → LlamaIndex → FastAPI SSE → frontend would fix this. LlamaIndex supports it; the frontend just needs an SSE consumer.
 - **Persistent sessions.** Redis-backed `ChatMemoryBuffer` so sessions survive restarts and work across replicas.
 - **Tests.** Start with the deterministic layer: fit scorer edge cases, skill extractor coverage, chunking boundaries, intent classifier with mocked LLM. Then integration tests for routing paths.
+
